@@ -54,10 +54,10 @@ export const renderNotessf = async (req, res) => {
   const tp = true;
   const ad = false;
   const ini = false;
-  const usuario13 = await Usuario.findOne({email: req.user.email, codigo3:"S"});
+  const usuario13 = await Usuario.findOne({email: req.user.email, t3:"S"});
   console.log("usuario",usuario13);
   if (!usuario13){
-  res.render("notes/pedircodigo2", { nombre, tp, ad, ini});
+  res.render("notes/pedircodigo3", { nombre, tp, ad, ini});
   }
   else {  res.render("notes/all-notes-sf", { nombre, tp, ad, ini});}
 };
@@ -91,10 +91,10 @@ export const renderNotesf = async (req, res) => {
   const tp = true;
   const ad = false;
   const ini = false;
-  const usuario14 = await Usuario.findOne({email: req.user.email, codigo4:"4"});
+  const usuario14 = await Usuario.findOne({email: req.user.email, t4:"S"});
   console.log("usuario",usuario14);
   if (!usuario14){
-  res.render("notes/pedircodigo3", { nombre, tp, ad, ini});
+  res.render("notes/pedircodigo4", { nombre, tp, ad, ini});
   }
   else {  res.render("notes/all-notes-f", { nombre, tp, ad, ini});}
 };
@@ -126,9 +126,60 @@ export const renderNotescodigo2 = async (req, res) => {
 
 };
 
+export const renderNotescodigo3 = async (req, res) => {
+
+  const nombre = req.user.name+" "+req.user.apellido;
+  const usua = req._id
+  const tp = true;
+  const ad = false;
+  const ini = false;
+  const puntousuario = await Usuario.findOne( {email: req.user.email}).lean()
+  if (req.body.t3 == "a") {
+    const puntuacion = puntousuario.puntos + 1;
+    const doct1 = await Usuario.updateOne({email: req.user.email},  {t3:"S", p3:1, puntos:puntuacion});
+  req.flash("success_msg", "Respuesta Correcta");
+}
+  else
+  {
+    req.flash("error_msg", "Respuesta Errada la Respuesta Correcta era 'Miel y Manzanilla'")
+
+    await Usuario.findOneAndUpdate({email: req.user.email}, {t3:"S", p3:0}) 
 
 
+};
 
+  res.redirect("/notessf");
+
+
+};
+
+
+export const renderNotescodigo4 = async (req, res) => {
+
+  const nombre = req.user.name+" "+req.user.apellido;
+  const usua = req._id
+  const tp = true;
+  const ad = false;
+  const ini = false;
+  const puntousuario = await Usuario.findOne( {email: req.user.email}).lean()
+  if (req.body.t4 == "a") {
+    const puntuacion = puntousuario.puntos + 1;
+    const doct1 = await Usuario.updateOne({email: req.user.email},  {t4:"S", p4:1, puntos:puntuacion});
+  req.flash("success_msg", "Respuesta Correcta");
+}
+  else
+  {
+    req.flash("error_msg", "Respuesta Errada la Respuesta Correcta era 'Miel y Manzanilla'")
+
+    await Usuario.findOneAndUpdate({email: req.user.email}, {t4:"S", p4:0}) 
+
+
+};
+
+  res.redirect("/notesf");
+
+
+};
 
 
 

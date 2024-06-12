@@ -5,7 +5,8 @@ import {
   renderNotesqf,
   renderNotessf,
   renderNotesf,
-  renderNotescodigo,
+  renderNotescodigo3,
+  renderNotescodigo4,
   renderNotescodigo1,
   renderNotescodigo2,
   renderNotespremios,
@@ -27,7 +28,10 @@ const router = Router();
 
 // Get All Notes
 router.get("/notes", isAuthenticated, renderNotes);
-router.post("/pedircodigo", isAuthenticated, renderNotescodigo);
+router.post("/pedircodigo3", isAuthenticated, renderNotescodigo3);
+
+router.post("/pedircodigo4", isAuthenticated, renderNotescodigo4);
+
 router.post("/pedircodigo1", isAuthenticated, renderNotescodigo1);
 router.post("/pedircodigo2", isAuthenticated, renderNotescodigo2);
 router.get("/notespremios", isAuthenticated, renderNotespremios);
