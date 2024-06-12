@@ -1,0 +1,117 @@
+<div style="background-image: url(/img/fondo5.png); background-size: cover; background-repeat: no-repeat;" >
+<br>
+ 
+<div class="slider" style="background-color: #405eb5;">
+	<div class="slide-track">
+		<div class="slide" style="">
+          <img src="/img/Bioeticos.png" alt="Second slide">
+		</div>
+		<div class="slide">
+          <img  src="/img/Cardiologica.png" alt="Second slide">
+		</div>
+				<div class="slide" style="">
+          <img src="/img/Dermatologica.png" alt="Second slide">
+		</div>
+		<div class="slide">
+          <img  src="/img/Dolor.png" alt="Second slide">
+		</div>
+				<div class="slide" style="">
+          <img src="/img/Gastroenterologia.png" alt="Second slide">
+		</div>
+		<div class="slide">
+          <img  src="/img/Lady-pharma.png" alt="Second slide">
+		</div>
+				<div class="slide" style="">
+          <img src="/img/Neuromedica.png" alt="Second slide">
+		</div>
+		<div class="slide">
+          <img  src="/img/Oftlamica.png" alt="Second slide">
+		</div>
+				<div class="slide" style="">
+          <img src="/img/OTC.png" alt="Second slide">
+		</div>
+		<div class="slide">
+          <img  src="/img/Pharmaler.png" alt="Second slide">
+		</div>
+				<div class="slide" style="">
+          <img src="/img/Respiratorio.png" alt="Second slide">
+		</div>
+		<div class="slide" style="">
+          <img src="/img/Bioeticos.png" alt="Second slide">
+		</div>
+		<div class="slide">
+          <img  src="/img/Cardiologica.png" alt="Second slide">
+		</div>
+				<div class="slide" style="">
+          <img src="/img/Dermatologica.png" alt="Second slide">
+		</div>
+		<div class="slide">
+          <img  src="/img/Dolor.png" alt="Second slide">
+		</div>
+				<div class="slide" style="">
+          <img src="/img/Gastroenterologia.png" alt="Second slide">
+		</div>
+		<div class="slide">
+          <img  src="/img/Lady-pharma.png" alt="Second slide">
+		</div>
+				<div class="slide" style="">
+          <img src="/img/Neuromedica.png" alt="Second slide">
+		</div>
+		<div class="slide">
+          <img  src="/img/Oftlamica.png" alt="Second slide">
+		</div>
+				<div class="slide" style="">
+          <img src="/img/OTC.png" alt="Second slide">
+		</div>
+		<div class="slide">
+          <img  src="/img/Pharmaler.png" alt="Second slide">
+		</div>
+				<div class="slide" style="">
+          <img src="/img/Respiratorio.png" alt="Second slide">
+		</div>
+
+	</div>
+</div>
+
+<br><br>
+
+
+<div style="width: 80%; text-align:center; margin-left:10%">
+
+{{#if notes}}
+  <table class="table table-bordered table-hover table-primary table-striped-columns">
+    <thead>
+      <tr>
+
+        <th>GRUPO</th>
+        <th>FECHA</th>
+        <th>EQUIPO</th>
+        <th>RESULTADO</th>
+        <th>EQUIPO </th>
+        <th>RESULTADO</th>
+        <th >Accion</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each notes}}
+        <tr>
+
+          <td>{{grupo}}</td>
+          <td>{{fecha}}</td>
+          <td>{{equipo1}}</td>
+          <td>{{resultado1}}</td>
+          <td>{{equipo2}}</td>
+          <td>{{resultado2}}</td>
+          <td><a href="/notes/edit/{{_id}}"><i class="fas fa-pen-alt" style="color: black"></i></a>
+          
+          </td>
+        
+          
+        </tr>
+       {{/each}}
+    </tbody>
+  </table>
+{{/if}}
+</div>
+<br><br>
+</div>
