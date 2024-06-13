@@ -57,6 +57,7 @@ router.get("/notes/imprimir", isAuthenticated, imprimirNote);
 router.get("/notes/imprimir1", isAuthenticated, imprimirNote1);
 router.get("/notes/imprimir2", isAuthenticated, imprimirNote2);
 
+
 router.get("/notes/visualizar/:id", isAuthenticated, renderVisualizarnotas);
 
 

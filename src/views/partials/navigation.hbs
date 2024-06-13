@@ -11,24 +11,26 @@
           <ul class="navbar-nav ml-auto">
 
             {{#if tp}}
-            <li class="nav-item">
-              <a class="nav-link" style="color:black; text-align:center; font-size:1.5vh " href="/notes">Fase de Grupos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" style="color:black ;text-align:center; font-size:1.5vh " href="/notesqf">Cuartos de Final</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" style="color:black ; text-align:center; font-size:1.5vh" href="/notessf">SemiFinal </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" style="color:black ; text-align:center; font-size:1.5vh" href="/notesf">Final</a>
 
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" style=" color:black;text-align:center; font-size:1.5vh " href="/notes/imprimir2">Mis resultados</a>
-            </li>
+                 <a class="nav-link dropdown-toggle" style="color:black; " href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"> Juegos</a>
+                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                      <a class="nav-link" style=" color:black; " href="/notes">Fase de Grupos</a>
+                      <a class="nav-link" style="color:black ; " href="/notesqf">Cuartos de Final</a>
+                      <a class="nav-link" style="color:black ; " href="/notessf">Semi Final</a>
+                      <a class="nav-link" style="color:black ; " href="/notesf">Final</a>
+                  </ul>
+                  </li>
+
+                  <li class="nav-item dropdown">
+                     <a class="nav-link dropdown-toggle" style="color:black; " href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown">Resultados</a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                     <a class="nav-link" style=" color:black; " href="/notes/imprimir2">Mis Resultados</a>
+                     <a class="nav-link" style="color:black ; " href="/notes/imprimir1">Ranking</a>
+                    </ul>
+                  </li>
+
              <li class="nav-item">
-              <a class="nav-link" style="color:black ; text-align:center; font-size:1.5vh" href="/auth/logout">Salir</a>
+              <a class="nav-link" style="color:black ; text-align:center; " href="/auth/logout">Salir</a>
             </li>
            {{/if}}
             {{#if ad}}

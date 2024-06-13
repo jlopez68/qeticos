@@ -4,7 +4,7 @@ body {
 }
 
 .navbar .navbar-brand img {
-  width: 80%;
+  width: 50%;
 }
 
 
@@ -130,7 +130,7 @@ th {
   }
   
   .slider .slide img {  
-    width: 40%;
+    width: 50%;
 
   }
 
