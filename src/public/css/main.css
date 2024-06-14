@@ -4,7 +4,7 @@ body {
 }
 
 .navbar .navbar-brand img {
-  width: 50%;
+  width: 30%;
 }
 
 
@@ -119,18 +119,19 @@ th {
 
   .slider .slide-track {
     display: flex;
+    align-items: center;
     animation: scroll 30s linear infinite;
     -webkit-animation: scroll 30s linear infinite;
-    width: calc(200px * 20);
+    width: calc(100px * 25);
 
   }
 
   .slider .slide {
-    width: auto;
+    width: 80%;
   }
   
   .slider .slide img {  
-    width: 45%;
+    width: 70%;
 
   }
 
@@ -140,7 +141,7 @@ th {
     transform: translateX(0);
     }
     100% {
-      -webkit-transform: translateX(calc(-200px * 10));
-      transform: translateX(calc(-200px * 10));
+      -webkit-transform: translateX(calc(-100px * 10));
+      transform: translateX(calc(-100px * 10));
     }
   }
