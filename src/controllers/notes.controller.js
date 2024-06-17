@@ -73,7 +73,7 @@ export const renderNotescodigo1 = async (req, res) => {
   await Usuario.findOneAndUpdate({email: req.user.email}, {t1:"S", p1:1, puntos:1})
   req.flash("success_msg", "Respuesta Correcta");
 }
-  else
+  else 
   {await Usuario.findOneAndUpdate({email: req.user.email}, {t1:"S", p1:0}) 
 
   req.flash("error_msg", "Respuesta Errada la Respuesta Correcta era la 'Levonam 0.25 SL'")};
@@ -844,7 +844,7 @@ import PdfkitConstruct3 from "pdfkit-construct";
 import User3 from "../models/User.js";
 export const imprimirNote3 = async (req, res) => {
 
-  const pedi = await User3.find({tipo_usuario:"Jugador"})
+  const pedi3 = await User3.find({tipo_usuario:"Jugador"})
   .sort({ puntos: "desc" })
   .lean();
 
@@ -882,7 +882,7 @@ export const imprimirNote3 = async (req, res) => {
                 {key: 'puntos', label: 'Puntos', align: 'center'},
 
               ],
-              pedi, {
+              pedi3, {
                   border: null,
                   width: "auto",
                   striped: true,
