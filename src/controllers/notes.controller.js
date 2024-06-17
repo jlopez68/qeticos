@@ -69,7 +69,7 @@ export const renderNotescodigo1 = async (req, res) => {
   const tp = true;
   const ad = false;
   const ini = false;
-  if (req.body.t1 == "b") {
+  if (req.body.t1 == "c") {
   await Usuario.findOneAndUpdate({email: req.user.email}, {t1:"S", p1:1, puntos:1})
   req.flash("success_msg", "Respuesta Correcta");
 }
@@ -835,5 +835,79 @@ export const imprimirNote2 = async (req, res) => {
             //doc.setPageNumbers((p, c) => `Page ${p} of ${c}`, "bottom right");
             doc2.pipe(res);
             doc2.end();
+        
+};
+
+
+
+import PdfkitConstruct3 from "pdfkit-construct";
+import User3 from "../models/User.js";
+export const imprimirNote3 = async (req, res) => {
+
+  const pedi = await User3.find({tipo_usuario:"Jugador"})
+  .sort({ puntos: "desc" })
+  .lean();
+
+            const doc = new PdfkitConstruct3({
+            size: 'letter',
+            margins: {top: 20, left: 5, right: 5, bottom: 20},
+            bufferPages: true});
+
+            // set the header to render in every page
+            doc.setDocumentHeader({}, () => {
+
+
+     //         doc.lineJoin('miter')
+     //             .rect(0, 0, doc.page.width, doc.header.options.heightNumber).fill("#ededed");
+
+              doc.fill("#115dc8")
+                  .fontSize(20)
+                  .text("Laboratorios Eticos", {align: 'center'});
+              doc.fill("#115dc8")
+                  .fontSize(18)
+                  .text("Posicion de los Jugadores", {align: 'center'});
+
+          });
+
+
+
+            // add a table (you can add multiple tables with different columns)
+            // make sure every column has a key. keys should be unique
+            doc.addTable(
+
+              [
+                {key: 'posicion', label: '#', align: 'left'},
+                {key: 'name', label: 'Nombre', align: 'left'},
+                {key: 'apellido', label: 'Apelido', align: 'left'},
+                {key: 'puntos', label: 'Puntos', align: 'center'},
+
+              ],
+              pedi, {
+                  border: null,
+                  width: "auto",
+                  striped: true,
+                  stripedColors: ["#f6f6f6", "#d6c4dd"],
+                  cellsPadding: 10,
+                  marginLeft: 25,
+                  marginRight: 25
+              });
+
+             // set the footer to render in every page
+            doc.setDocumentFooter({}, () => {
+
+              //         doc.lineJoin('miter')
+              //             .rect(0, doc.footer.y, doc.page.width, doc.footer.options.heightNumber).fill("#c2edbe");
+         
+                       doc.fill("#7416c8")
+                           .fontSize(8)
+                           .text("Quiniela Laboratorios Eticos", doc.footer.x, doc.footer.y + 10);
+                   });
+          // render tables
+          doc.render();
+            // this should be the last
+            // for this to work you need to set bufferPages to true in constructor options 
+            //doc.setPageNumbers((p, c) => `Page ${p} of ${c}`, "bottom right");
+            doc.pipe(res);
+            doc.end();
         
 };

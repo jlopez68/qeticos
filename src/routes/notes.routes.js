@@ -16,6 +16,7 @@ import {
   imprimirNote,
   imprimirNote1,
   imprimirNote2,
+  imprimirNote3,
   renderVisualizarnotas
 } from "../controllers/notes.controller.js";
 
@@ -56,6 +57,7 @@ router.delete("/notes/delete/:id", isAuthenticated, deleteNote);
 router.get("/notes/imprimir", isAuthenticated, imprimirNote);
 router.get("/notes/imprimir1", isAuthenticated, imprimirNote1);
 router.get("/notes/imprimir2", isAuthenticated, imprimirNote2);
+router.get("/notes/imprimir3", isAuthenticated, imprimirNote3);
 
 
 router.get("/notes/visualizar/:id", isAuthenticated, renderVisualizarnotas);
