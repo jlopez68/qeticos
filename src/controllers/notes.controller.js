@@ -695,7 +695,7 @@ export const imprimirNote1 = async (req, res) => {
   .lean();
 
             const doc = new PdfkitConstruct1({
-            size: 'letter',
+            size: 'tabloid',
             margins: {top: 20, left: 5, right: 5, bottom: 20},
             bufferPages: true});
 
