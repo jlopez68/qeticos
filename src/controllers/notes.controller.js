@@ -726,6 +726,9 @@ export const imprimirNote1 = async (req, res) => {
                 {key: 'name', label: 'Nombre', align: 'left'},
                 {key: 'apellido', label: 'Apelido', align: 'left'},
                 {key: 'email', label: 'Email', align: 'left'},
+                {key: 'cedula', label: 'Cedula', align: 'left'},
+                {key: 'ciudad', label: 'Ciudad', align: 'left'},
+                {key: 'profesional', label: 'Profesional', align: 'left'},
                 {key: 'puntos', label: 'Puntos', align: 'center'},
 
               ],
@@ -735,8 +738,8 @@ export const imprimirNote1 = async (req, res) => {
                   striped: true,
                   stripedColors: ["#f6f6f6", "#d6c4dd"],
                   cellsPadding: 10,
-                  marginLeft: 25,
-                  marginRight: 25
+                  marginLeft: 5,
+                  marginRight: 5
               });
 
              // set the footer to render in every page
