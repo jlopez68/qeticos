@@ -722,7 +722,7 @@ export const imprimirNote1 = async (req, res) => {
             doc.addTable(
 
               [
-                {key: 'posicion', label: '#', align: 'left'},
+ 
                 {key: 'name', label: 'Nombre', align: 'left'},
                 {key: 'apellido', label: 'Apelido', align: 'left'},
                 {key: 'email', label: 'Email', align: 'left'},
@@ -879,7 +879,7 @@ export const imprimirNote3 = async (req, res) => {
             doc.addTable(
 
               [
-                {key: 'posicion', label: '#', align: 'left'},
+  
                 {key: 'name', label: 'Nombre', align: 'left'},
                 {key: 'apellido', label: 'Apelido', align: 'left'},
                 {key: 'puntos', label: 'Puntos', align: 'center'},
